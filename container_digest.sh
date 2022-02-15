@@ -142,8 +142,8 @@ then
     echo "Attest SBOM"
     cosign attest --predicate sbom-spdx.json --type spdx --key "$COSIGN_KEY" "$docker_registry_prefix"/"$imagename"@"${containerdigest}"
 
-    echo "Verify SBOM"
-    cosign verify-attestation --key "$COSIGN_PUB" "$docker_registry_prefix"/"$imagename"@"${containerdigest}"
+    # echo "Verify SBOM"
+    #cosign verify-attestation --key "$COSIGN_PUB" "$docker_registry_prefix"/"$imagename"@"${containerdigest}"
   fi
 fi
 
